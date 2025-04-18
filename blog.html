@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Coders Over Borders – Blog</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+  <!-- AOS for scroll animations -->
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- Custom Styles -->
+  <style>
+    body { font-family: 'Space Mono', monospace; padding-top: 56px; background: #f9fafb; }
+    .header-section { position: relative; width: 100%; height: 30vh; background: url('images/blog-hero.jpg') center/cover no-repeat; }
+    .header-overlay { position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); display:flex; align-items:center; justify-content:center; }
+    .header-large-text { color:#fff; font-size:3.5rem; text-transform:uppercase; letter-spacing:1.5px; }
+
+    .section-title { font-size: 2rem; font-weight: 600; margin: 2rem 0 1rem; position: relative; text-align: center; }
+    .section-title::after { content: ''; width: 50px; height: 3px; background: #007bff; display: block; margin: 0.5rem auto 0; }
+
+    .blog-post { background: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); padding: 2rem; margin-bottom: 2rem; transition: transform 0.3s ease; }
+    .blog-post:hover { transform: translateY(-5px); }
+    .post-date { font-size: 0.9rem; color: #6c757d; margin-bottom: 0.5rem; }
+    .post-title { font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .post-meta { font-size: 0.95rem; color: #007bff; margin-bottom: 1rem; }
+    .post-content { line-height: 1.6; color: #343a40; }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="home.html">
+        <img src="coblogotransparent.png" alt="Logo" style="height:40px;">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="team.html">Our Team</a></li>
+          <li class="nav-item"><a class="nav-link" href="lessons.html">Courses</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="become_staff.html">Become a Staff</a></li>
+          <li class="nav-item"><a class="nav-link" href="donate.html">Donate</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER HERO -->
+  <div class="header-section">
+    <div class="header-overlay">
+      <h1 class="header-large-text">Blog</h1>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <div class="container my-5">
+    <h2 class="section-title">Latest Stories</h2>
+
+    <!-- Post 1 -->
+    <article class="blog-post" data-aos="fade-up" data-aos-delay="100">
+      <div class="post-date">April 16, 2025</div>
+      <div class="post-title">Donation Link &amp; Website Live!</div>
+      <div class="post-meta">By Anvay Ajmera</div>
+      <div class="post-content">
+        We’re thrilled to announce that our official donation link is now live, and the new Coders Over Borders website is up and running! You can support our mission by donating securely via PayPal. A huge thank-you to everyone who helped beta-test and launch this site—your feedback made all the difference.
+      </div>
+    </article>
+
+    <!-- Post 2 -->
+    <article class="blog-post" data-aos="fade-up" data-aos-delay="200">
+      <div class="post-date">April 17, 2025</div>
+      <div class="post-title">Branches in South Korea &amp; Ethiopia</div>
+      <div class="post-meta">By Tharun Naguleswaran</div>
+      <div class="post-content">
+        Coders Over Borders is expanding! Today we officially opened new branches in Seoul, South Korea, and Addis Ababa, Ethiopia. These teams will adapt our curriculum for local languages and host workshops to empower students across Asia and Africa. Welcome aboard, new collaborators!
+      </div>
+    </article>
+
+    <!-- Post 3 -->
+    <article class="blog-post" data-aos="fade-up" data-aos-delay="300">
+      <div class="post-date">April 18, 2025</div>
+      <div class="post-title">Speech at UN ECOSOC</div>
+      <div class="post-meta">By Anvay Ajmera</div>
+      <div class="post-content">
+        Yesterday, I had the honor of delivering a keynote at the United Nations ECOSOC session on youth and digital inclusion. I spoke about how coding education can drive sustainable development and economic opportunity worldwide. Thank you to ECOSOC for the incredible platform—we’re ready to turn words into action!
+      </div>
+    </article>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-dark text-white py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-3 text-center">
+          <h5>Visit Our Blog</h5>
+          <a href="#" class="text-white text-decoration-none">
+            <i class="fas fa-blog me-2"></i>Go to Blog
+          </a>
+        </div>
+        <div class="col-md-4 mb-3 text-center">
+          <h5>Follow Us</h5>
+          <div class="d-flex justify-content-center gap-3">
+            <a href="www.tiktok.com/codersoverborders" class="text-white fs-4"><i class="fab fa-tiktok"></i></a>
+            <a href="www.instagram.com/codersoverborders" class="text-white fs-4"><i class="fab fa-x-twitter"></i></a>
+            <a href="www.x.com/codersoverborders" class="text-white fs-4"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@tharunnaguleswaran" class="text-white fs-4"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.linkedin.com/company/coders-over-borders/?viewAsMember=true" class="text-white fs-4"><i class="fab fa-linkedin"></i></a>
+
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <h5>Subscribe to Our Newsletter</h5>
+          <form>
+            <div class="input-group">
+              <input type="email" class="form-control" placeholder="Enter your email">
+              <button class="btn btn-primary" type="submit">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="text-center mt-4"><small>&copy; 2025 Coders Over Borders. All rights reserved.</small></div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+  </script>
+</body>
+</html>

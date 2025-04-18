@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Coders Over Borders - Contact</title>
+    <style>
+        /* Additional Styling for Modern Look */
+        body {
+            font-family: 'Space Mono', sans-serif;
+            background-color: #f4f7fb;
+        }
+
+        .contact-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-card img {
+            border-radius: 10px;
+        }
+
+        .contact-card h3 {
+            font-size: 1.5rem;
+            margin-top: 15px;
+            color: #333;
+        }
+
+        .contact-card p {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .contact-card a {
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #fff;
+            background-color: #353a33;
+            padding: 12px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-card a:hover {
+            background-color: #353a33;
+        }
+
+        .contact-section {
+            margin-top: 50px;
+        }
+
+        .contact-form {
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form .form-control {
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+        }
+
+        .contact-form button {
+            width: 100%;
+            background-color: #353a33;
+            border-radius: 10px;
+            padding: 12px;
+            color: #ddd;
+            border: none;
+            font-size: 1.1rem;
+        }
+
+        .contact-form button:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            padding: 30px 0;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="home.html">
+            <img src="coblogotransparent.png" alt="Logo" style="height:40px;">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+              <li class="nav-item"><a class="nav-link" href="team.html">Our Team</a></li>
+              <li class="nav-item"><a class="nav-link" href="lessons.html">Courses</a></li>
+              <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+              <li class="nav-item"><a class="nav-link" href="become_staff.html">Become a Staff</a></li>
+              <li class="nav-item"><a class="nav-link" href="donate.html">Donate</a></li>
+              <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <section class="header-section">
+        <div class="header-overlay">
+            <div class="header-small-text">NEED ANYTHING?</div>
+            <div class="header-large-text">CONTACT</div>
+            <div class="header-small-text">US</div>
+        </div>
+    </section>
+
+    <div class="container contact-section">
+        <div class="row">
+            <!-- Leadership Contact -->
+            <div class="col-md-6 mb-4">
+                <div class="contact-card">
+                    <img src="leadership.jpg" alt="Leadership Team" class="img-fluid rounded">
+                    <h3><i class="fas fa-users"></i> Contact Leadership</h3>
+                    <p>For inquiries related to the vision, direction, and leadership of Coders Over Borders, please reach out to our leadership team.</p>
+                    <a href="mailto:codersoverborders@gmail.com"><i class="fas fa-envelope"></i> Email Leadership</a>
+                </div>
+            </div>
+
+            <!-- Becoming a Staff Member -->
+            <div class="col-md-6 mb-4">
+                <div class="contact-card">
+                    <img src="teaching.jpg" alt="Staff" class="img-fluid rounded">
+                    <h3><i class="fas fa-chalkboard-teacher"></i> Become a Staff Member</h3>
+                    <p>If you're passionate about teaching coding and want to join our staff, we'd love to hear from you!</p>
+                    <a href="https://form.typeform.com/to/yPL0pY9F"><i class="fas fa-user-plus"></i> Apply Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <!-- Press and Media Contact -->
+            <div class="col-md-6 mb-4">
+                <div class="contact-card">
+                    <img src="press.jpg" alt="Press and Media" class="img-fluid rounded">
+                    <h3><i class="fas fa-bullhorn"></i> Press and Media</h3>
+                    <p>If you represent the press or media and are interested in our nonprofit, reach out to us for interviews, press releases, or any inquiries.</p>
+                    <a href="mailto:codersoverborders@gmail.com"><i class="fas fa-envelope"></i> Contact Press</a>
+                </div>
+            </div>
+
+            <!-- Start a Branch -->
+            <div class="col-md-6 mb-4">
+                <div class="contact-card">
+                    <img src="branch.png" alt="Start a Branch" class="img-fluid rounded">
+                    <h3><i class="fas fa-branch-tree"></i> Start a Branch</h3>
+                    <p>Interested in starting a branch of Coders Over Borders in your area? Let's work together to make it happen!</p>
+                    <a href="start_branch.html"><i class="fas fa-cogs"></i> Get Started</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- General Contact Form -->
+        <div class="row">
+            <div class="col-12">
+                <div class="contact-form">
+                    <h3><i class="fas fa-envelope-open-text"></i> General Contact Form</h3>
+                    <form action="submit_contact_form.php" method="post">
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" name="name" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Your Message</label>
+                            <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success"><i class="fas fa-paper-plane"></i> Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4 mb-3 text-center">
+              <h5>Visit Our Blog</h5>
+              <a href="#" class="text-white text-decoration-none">
+                <i class="fas fa-blog me-2"></i>Go to Blog
+              </a>
+            </div>
+            <div class="col-md-4 mb-3 text-center">
+              <h5>Follow Us</h5>
+              <div class="d-flex justify-content-center gap-3">
+                <a href="www.tiktok.com/codersoverborders" class="text-white fs-4"><i class="fab fa-tiktok"></i></a>
+                <a href="www.instagram.com/codersoverborders" class="text-white fs-4"><i class="fab fa-x-twitter"></i></a>
+                <a href="www.x.com/codersoverborders" class="text-white fs-4"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.youtube.com/@tharunnaguleswaran" class="text-white fs-4"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.linkedin.com/company/coders-over-borders/?viewAsMember=true" class="text-white fs-4"><i class="fab fa-linkedin"></i></a>
+    
+              </div>
+            </div>
+            <div class="col-md-4 text-center">
+              <h5>Subscribe to Our Newsletter</h5>
+              <form>
+                <div class="input-group">
+                  <input type="email" class="form-control" placeholder="Enter your email">
+                  <button class="btn btn-primary" type="submit">Subscribe</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="text-center mt-4"><small>&copy; 2025 Coders Over Borders. All rights reserved.</small></div>
+        </div>
+      </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800, 
+            once: true, 
+        });
+    </script>
+</body>
+</html>
