@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Coders Over Borders</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'mono': ['Space Mono', 'monospace'],
+                    },
+                    colors: {
+                        'brand': '#353a33',
+                        'brand-light': '#6b7263',
+                        'brand-lighter': '#8a9280',
+                        'brand-accent': '#a8b29d',
+                        'dark': {
+                            100: '#0f0f0f',
+                            200: '#1a1a1a',
+                            300: '#2a2a2a',
+                            400: '#3a3a3a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-morphism {
+            background: rgba(26, 26, 26, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #353A33, #6b7263, #8a9280, #a8b29d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hover-glow:hover {
+            box-shadow: 0 0 25px rgba(107, 114, 99, 0.4);
+        }
+    </style>
+</head>
+<body class="font-mono antialiased bg-dark-100 text-white">
+    <!-- Modern Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-morphism border-b border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-4">
+                    <img src="../assets/logos/coblongfixedcolor.png" alt="Logo" class="h-12 w-auto hidden sm:block">
+                    <img src="../assets/logos/coblogotransparent.png" alt="Logo" class="h-12 w-auto sm:hidden">
+                </div>
+                
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="../index.html" class="text-gray-300 hover:text-brand-accent transition-all duration-300 font-medium">Home</a>
+                    <a href="about.html" class="text-brand-accent font-semibold relative">
+                        About
+                        <span class="absolute -bottom-2 left-0 w-full h-0.5 bg-brand-accent"></span>
+                    </a>
+                    <a href="team.html" class="text-gray-300 hover:text-brand-accent transition-all duration-300 font-medium">Team</a>
+                    <a href="lessons.html" class="text-gray-300 hover:text-brand-accent transition-all duration-300 font-medium">Courses</a>
+                    <a href="contact.html" class="text-gray-300 hover:text-brand-accent transition-all duration-300 font-medium">Contact</a>
+                    
+                    <!-- More Dropdown -->
+                    <div class="relative group">
+                        <button class="text-gray-300 hover:text-brand-accent transition-all duration-300 hover:scale-105 font-medium flex items-center space-x-1">
+                            <span>More</span>
+                            <i class="fas fa-chevron-down text-sm transition-transform duration-300 group-hover:rotate-180"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 glass-morphism rounded-2xl border border-gray-700/50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                            <div class="p-2">
+                                <a href="become_staff.html" class="block px-4 py-3 text-gray-300 hover:text-brand-accent hover:bg-brand-accent/10 rounded-xl transition-all duration-300">
+                                    <i class="fas fa-user-plus mr-2"></i>Become Staff
+                                </a>
+                                <a href="blog.html" class="block px-4 py-3 text-gray-300 hover:text-brand-accent hover:bg-brand-accent/10 rounded-xl transition-all duration-300">
+                                    <i class="fas fa-blog mr-2"></i>Blog
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="donate.html" class="bg-gradient-to-r from-brand to-brand-light text-white px-6 py-3 rounded-full font-bold hover:scale-105 hover-glow transition-all duration-300">Donate</a>
+                </div>
+                
+                <button class="lg:hidden text-gray-300 hover:text-brand-accent" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="lg:hidden hidden" id="mobile-menu">
+            <div class="glass-morphism m-4 rounded-2xl p-6 space-y-4">
+                <a href="../index.html" class="block text-gray-300 hover:text-brand-accent transition-colors">Home</a>
+                <a href="about.html" class="block text-brand-accent font-semibold text-lg">About</a>
+                <a href="team.html" class="block text-gray-300 hover:text-brand-accent transition-colors">Team</a>
+                <a href="lessons.html" class="block text-gray-300 hover:text-brand-accent transition-colors">Courses</a>
+                <a href="contact.html" class="block text-gray-300 hover:text-brand-accent transition-colors">Contact</a>
+                <div class="border-t border-gray-700 pt-4">
+                    <a href="become_staff.html" class="block text-gray-300 hover:text-brand-accent transition-colors">Become Staff</a>
+                    <a href="blog.html" class="block text-gray-300 hover:text-brand-accent transition-colors">Blog</a>
+                </div>
+                <a href="donate.html" class="block bg-gradient-to-r from-brand to-brand-light text-white px-4 py-2 rounded-lg font-bold text-center">Donate</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Modern Hero Section -->
+    <section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-dark-100 via-dark-200 to-dark-300 pt-20">
+        <div class="absolute inset-0">
+            <div class="absolute top-20 left-10 w-32 h-32 bg-brand-accent/10 rounded-full blur-xl"></div>
+            <div class="absolute bottom-20 right-10 w-48 h-48 bg-brand-light/10 rounded-full blur-xl"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-5xl mx-auto text-center px-6">
+            <h1 class="text-6xl md:text-7xl font-bold text-white mb-8" data-aos="fade-up">
+                Welcome to <span class="gradient-text">Coders Over Borders</span>
+            </h1>
+            <p class="text-2xl md:text-3xl text-gray-300 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                Empowering communities through computer science education
+            </p>
+        </div>
+    </section>
+
+    <!-- Mission Statement -->
+    <section class="py-32 bg-dark-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <h2 class="text-5xl md:text-6xl font-bold text-white mb-12" data-aos="fade-up">Our Mission Statement</h2>
+                <div class="glass-morphism rounded-3xl p-16" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex flex-wrap justify-center items-center gap-6 text-4xl md:text-6xl font-bold">
+                        <span class="text-white" data-aos="fade-up" data-aos-delay="300">Computer</span>
+                        <span class="gradient-text" data-aos="fade-up" data-aos-delay="500">science</span>
+                        <span class="text-white" data-aos="fade-up" data-aos-delay="700">for</span>
+                        <span class="gradient-text" data-aos="fade-up" data-aos-delay="900">all.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Importance Section -->
+    <section class="py-32 bg-dark-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-5xl font-bold text-center text-white mb-20" data-aos="fade-up">
+                The Importance of <span class="gradient-text">Computer Science</span>
+            </h2>
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div data-aos="fade-right">
+                    <div class="glass-morphism rounded-2xl p-4 hover-glow hover:scale-105 transition-all duration-500">
+                        <img src="../assets/images/cobdescription.jpg" alt="Coding Importance" class="w-full rounded-2xl">
+                    </div>
+                </div>
+                <div data-aos="fade-left" data-aos-delay="200">
+                    <div class="glass-morphism rounded-2xl p-10">
+                        <p class="text-xl text-gray-300 leading-relaxed">
+                            <strong class="text-brand-accent">Computer science has the power to change the world.</strong> We are living in the age of information. Humans are developing faster and creating new innovations everyday, due to the power of the modern computer. The power of code has solved numerous problems, and made the lives of billions easier. However, in the places where the most problems need to be solved, the tool to fix it <strong class="text-brand-accent">isn't there.</strong> Coders Over Borders aspires to fix that problem. By giving the gift of computer literacy to those who need it, in a unique and early approach, the problems in their communities can be solved, by their own hands.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-32 bg-dark-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-5xl font-bold text-center text-white mb-12" data-aos="fade-up">
+                Where We <span class="gradient-text">Work</span>
+            </h2>
+            <p class="text-xl text-gray-400 text-center max-w-4xl mx-auto mb-16" data-aos="fade-up" data-aos-delay="100">
+                Our global network spans multiple continents, with headquarters serving as operational hubs and branches extending our educational outreach worldwide.
+            </p>
+            <div class="glass-morphism rounded-3xl p-10" data-aos="fade-up" data-aos-delay="200">
+                <div id="map" class="w-full h-96 rounded-2xl"></div>
+                <div class="mt-8 flex justify-center">
+                    <div class="glass-morphism rounded-2xl p-8">
+                        <h4 class="font-semibold mb-6 text-xl text-center text-white">Key</h4>
+                        <div class="space-y-4">
+                            <div class="flex items-center justify-center">
+                                <div class="w-6 h-6 bg-blue-500 rounded-full mr-4"></div>
+                                <span class="text-lg">Headquarters</span>
+                            </div>
+                            <div class="flex items-center justify-center">
+                                <div class="w-6 h-6 bg-red-500 rounded-full mr-4"></div>
+                                <span class="text-lg">Branches</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="py-32 bg-dark-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-5xl font-bold text-center text-white mb-20" data-aos="fade-up">
+                Who We <span class="gradient-text">Work With</span>
+            </h2>
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                <div class="group text-center" data-aos="fade-up">
+                    <div class="glass-morphism rounded-2xl p-8 transition-all duration-300 group-hover:scale-110 hover-glow h-40 flex flex-col items-center justify-center">
+                        <div class="flex-1 flex items-center justify-center mb-4">
+                            <img src="../assets/logos/retech.png" alt="ReTechnology" class="max-w-full max-h-20 object-contain filter brightness-125 contrast-125 drop-shadow-lg group-hover:drop-shadow-xl transition-all duration-300 group-hover:scale-110">
+                        </div>
+                        <p class="font-semibold text-white text-sm">ReTechnology</p>
+                    </div>
+                </div>
+                <div class="text-center group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="glass-morphism rounded-2xl p-8 transition-all duration-300 group-hover:scale-110 hover-glow h-40 flex flex-col items-center justify-center">
+                        <div class="flex-1 flex items-center justify-center mb-4">
+                            <img src="../assets/logos/steelcitycodes.png" alt="Steel City Codes" class="max-w-full max-h-20 object-contain filter brightness-125 contrast-125 drop-shadow-lg group-hover:drop-shadow-xl transition-all duration-300 group-hover:scale-110">
+                        </div>
+                        <p class="font-semibold text-white text-sm">Steel City Codes</p>
+                    </div>
+                </div>
+                <div class="text-center group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="glass-morphism rounded-2xl p-8 transition-all duration-300 group-hover:scale-110 hover-glow h-40 flex flex-col items-center justify-center">
+                        <div class="flex-1 flex items-center justify-center mb-4">
+                            <img src="../assets/logos/enginuity.png" alt="Enginuity" class="max-w-full max-h-20 object-contain filter brightness-125 contrast-125 drop-shadow-lg group-hover:drop-shadow-xl transition-all duration-300 group-hover:scale-110">
+                        </div>
+                        <p class="font-semibold text-white text-sm">Enginuity</p>
+                    </div>
+                </div>
+                <div class="text-center group" data-aos="fade-up" data-aos-delay="300">
+                    <div class="glass-morphism rounded-2xl p-8 transition-all duration-300 group-hover:scale-110 hover-glow h-40 flex flex-col items-center justify-center">
+                        <div class="flex-1 flex items-center justify-center mb-4">
+                            <img src="../assets/logos/voltwide.png" alt="Voltwide" class="max-w-full max-h-20 object-contain filter brightness-125 contrast-125 drop-shadow-lg group-hover:drop-shadow-xl transition-all duration-300 group-hover:scale-110">
+                        </div>
+                        <p class="font-semibold text-white text-sm">Voltwide</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modern Footer -->
+    <footer class="bg-dark-100 border-t border-gray-800/50 py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-4 gap-12">
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-4 mb-8">
+                        <img src="../assets/logos/coblogotransparent.png" alt="Logo" class="h-16 w-auto">
+                        <span class="text-3xl font-bold gradient-text">Coders Over Borders</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed mb-8 text-lg">
+                        Empowering communities worldwide through innovative computer science education and breaking down digital barriers.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="w-12 h-12 glass-morphism rounded-full flex items-center justify-center hover:bg-brand hover:text-white transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 glass-morphism rounded-full flex items-center justify-center hover:bg-brand hover:text-white transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 glass-morphism rounded-full flex items-center justify-center hover:bg-brand hover:text-white transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-6">Quick Links</h3>
+                    <ul class="space-y-4">
+                        <li><a href="about.html" class="text-gray-400 hover:text-brand-light transition-colors text-lg">About Us</a></li>
+                        <li><a href="lessons.html" class="text-gray-400 hover:text-brand-light transition-colors text-lg">Courses</a></li>
+                        <li><a href="team.html" class="text-gray-400 hover:text-brand-light transition-colors text-lg">Our Team</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-brand-light transition-colors text-lg">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-6">Get Involved</h3>
+                    <ul class="space-y-4">
+                        <li><a href="contact.html" class="text-gray-400 hover:text-brand-light transition-colors text-lg">Contact Us</a></li>
+                        <li><a href="become_staff.html" class="text-gray-400 hover:text-brand-light transition-colors text-lg">Join Our Team</a></li>
+                        <li><a href="donate.html" class="text-gray-400 hover:text-brand-light transition-colors text-lg">Donate</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-16 pt-8 text-center">
+                <p class="text-gray-500 text-lg">&copy; 2025 Coders Over Borders. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            // Add mobile menu logic
+        });
+
+        // Enhanced map initialization
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof L !== 'undefined') {
+                initMap();
+            } else {
+                setTimeout(initMap, 100);
+            }
+        });
+
+        function initMap() {
+            try {
+                var map = L.map('map', {
+                    zoomControl: false,
+                    attributionControl: false
+                }).setView([20, 0], 2);
+                
+                // Dark theme tiles
+                L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+                    attribution: '&copy; OpenStreetMap contributors'
+                }).addTo(map);
+
+                // Updated locations with new headquarters and branches
+                var locations = [
+                    // Original headquarters
+                    { coords: [40.5936, -74.6047], name: "Bridgewater, New Jersey", type: "hq" },
+                    
+                    // New headquarters
+                    { coords: [53.5461, -113.4938], name: "Edmonton, Alberta", type: "hq" },
+                    { coords: [47.5014, 8.7288], name: "Winterthur, Switzerland", type: "hq" },
+                    { coords: [51.5074, -0.1278], name: "London, UK", type: "hq" },
+                    { coords: [13.0827, 80.2707], name: "Chennai, India", type: "hq" },
+                    { coords: [32.0853, 34.7818], name: "Tel Aviv, Israel", type: "hq" },
+                    { coords: [1.3521, 103.8198], name: "Singapore", type: "hq" },
+                    { coords: [9.3077, 2.3158], name: "Benin", type: "hq" },
+                    
+                    // Original branches
+                    { coords: [9.7396, 80.0255], name: "Uduvil, Sri Lanka", type: "branch" },
+                    { coords: [9.4926, 80.2432], name: "Pooneryn, Sri Lanka", type: "branch" },
+                    
+                    // New branches
+                    { coords: [9.0192, 38.7525], name: "Addis Ababa, Ethiopia", type: "branch" },
+                    { coords: [51.8833, 6.3833], name: "Schoppingnen, Germany", type: "branch" },
+                    { coords: [5.6037, -0.1870], name: "Accra, Ghana", type: "branch" },
+                    { coords: [48.8566, 2.3522], name: "Paris, France", type: "branch" },
+                    { coords: [17.3850, 78.4867], name: "Hyderabad, India", type: "branch" },
+                    { coords: [12.9716, 77.5946], name: "Bangalore, India", type: "branch" },
+                    { coords: [-6.2088, 106.8456], name: "Jakarta, Indonesia", type: "branch" },
+                    { coords: [25.2048, 55.2708], name: "Dubai, UAE", type: "branch" },
+                    { coords: [28.7041, 77.1025], name: "New Delhi, India", type: "branch" },
+                    { coords: [22.5726, 88.3639], name: "Kolkata, India", type: "branch" },
+                    { coords: [9.9252, 78.1198], name: "Madurai, India", type: "branch" }
+                ];
+
+                locations.forEach(function(location) {
+                    var markerColor = location.type === 'hq' ? '#3b82f6' : '#ef4444';
+                    var marker = L.circleMarker(location.coords, {
+                        radius: 8,
+                        fillColor: markerColor,
+                        color: '#ffffff',
+                        weight: 2,
+                        opacity: 1,
+                        fillOpacity: 0.8
+                    }).addTo(map);
+                    
+                    marker.bindPopup(`<div class="bg-dark-200 text-white p-3 rounded-lg"><b>${location.name}</b><br>${location.type === 'hq' ? 'Headquarters' : 'Branch'}</div>`);
+                });
+
+                var group = new L.featureGroup();
+                locations.forEach(function(location) {
+                    group.addLayer(L.marker(location.coords));
+                });
+                map.fitBounds(group.getBounds().pad(0.1));
+            } catch (error) {
+                console.error('Error initializing map:', error);
+                document.getElementById('map').innerHTML = '<div class="flex items-center justify-center h-full text-gray-500 text-xl">Map could not be loaded</div>';
+            }
+        }
+    </script>
+</body>
+</html>

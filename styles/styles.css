@@ -1,0 +1,1358 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply font-inter bg-slate-50 text-slate-900;
+  }
+}
+
+@layer components {
+  .gradient-bg {
+    @apply bg-gradient-to-br from-slate-900 via-gray-900 to-stone-900;
+  }
+  
+  .glass-effect {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-2 hover:shadow-xl;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-brand via-brand-light to-brand-accent bg-clip-text text-transparent;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-brand to-brand-light text-white px-8 py-4 rounded-full font-semibold transition-all duration-300 hover:shadow-lg hover:scale-105;
+  }
+  
+  .card-modern {
+    @apply bg-white rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 border border-slate-100;
+  }
+  
+  .navbar-modern {
+    @apply fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.animate-slide-in-left {
+  animation: slideInLeft 0.8s ease-out forwards;
+}
+.blurb-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.blurb-title {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.blurb-text {
+    font-size: 16px;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    margin-top: auto;
+}
+
+.toggle-container {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Toggle Switch Styles */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000;
+    transition: 0.4s;
+    border-radius: 15px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 19px;
+    width: 19px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #fff;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+.dark-mode .slider {
+    background-color: #fff;
+}
+
+.dark-mode .slider:before {
+    background-color: #000;
+}
+
+.sun-icon, .moon-icon {
+    position: absolute;
+    top: 3px;
+    font-size: 18px;
+    transition: opacity 0.4s ease;
+    color: #000;
+}
+
+.dark-mode .sun-icon, .dark-mode .moon-icon {
+    color: #fff;
+}
+
+.sun-icon {
+    left: 5px;
+    opacity: 1;
+}
+
+.moon-icon {
+    right: 5px;
+    opacity: 0;
+}
+
+input:checked + .slider .sun-icon {
+    opacity: 0;
+}
+
+input:checked + .slider .moon-icon {
+    opacity: 1;
+}
+
+/* Navbar Logo */
+.logo {
+    height: 30px;
+    width: auto;
+    margin-right: 10px;
+    transition: height 0.3s ease;
+}
+
+@media (min-width: 768px) {
+    .logo {
+        height: 40px;
+    }
+}
+
+.counter-section {
+    margin-top: 10px;
+    color: #333;
+}
+
+.counter {
+    font-size: 80px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}
+
+.digit {
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    width: 60px;
+    height: 100px;
+}
+
+.counter-label {
+    font-size: 18px;
+    margin-top: 10px;
+    color: #555;
+}
+
+/* Styling for the Separator Line */
+.separator {
+    border: none;
+    border-top: 2px solid #333;
+    margin: 20px 0;
+    width: 80%;
+    align-self: center;
+}
+
+/* Swiper Lesson Showcase */
+.lessons-showcase {
+    text-align: center;
+    padding: 3rem 0 1rem 0; /* Decrease bottom padding */
+    background-color: #fafafa;
+}
+
+.swiper {
+    width: 100%;
+    height: 300px;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: rgb(240, 240, 247);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.lesson-content {
+    padding: 1rem;
+}
+
+.lesson-image {
+    width: 850px; /* Set a fixed width */
+    height: 150px; /* Set a fixed height */
+    object-fit: cover; /* Ensures the image fills the specified size while maintaining aspect ratio */
+    border-radius: 10px;
+    margin-top: 20px; /* Adds space above the image */
+
+    max-width: 100%; /* Optional: Ensures the image remains responsive */
+}
+
+
+.swiper-button-prev,
+.swiper-button-next {
+    position: absolute;
+    bottom: 10px; /* Position at the bottom */
+    color: #353a33;
+    font-size: 20px;
+    width: auto;
+}
+
+.swiper-button-prev {
+    left: 10px;
+}
+
+.swiper-button-next {
+    right: 10px;
+}
+
+/* Center arrows vertically for a bottom-centered alignment */
+.swiper-slide {
+    position: relative;
+}
+
+.swiper-wrapper {
+    display: flex;
+    align-items: flex-end; /* Align arrows to the bottom of slides */
+    height: 100%;
+}
+
+/* Swiper Navigation Buttons - Ensure Bottom Alignment */
+.swiper-container {
+    position: relative;
+}
+
+.lessons-link-section {
+    padding: 1rem 0;
+    margin-top: 0.5rem; /* Reduce the gap */
+}
+
+.lessons-link {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #353a33;
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 2px solid #353a33;
+    border-radius: 2px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.lessons-link:hover {
+    background-color: #353a33;
+    color: #ffffff;
+}
+
+/* Add three arrow elements */
+.lessons-link::after {
+    content: '→ → →';
+    position: absolute;
+    right: 20px;
+    opacity: 0;
+    font-size: 18px;
+    transition: transform 0.3s, opacity 0.3s;
+    transform: translateX(-20px);
+    color: #4CAF50;
+}
+
+/* Hover animation: arrows slide in */
+.lessons-link:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Click animation: arrows pulse */
+.lessons-link:active::after {
+    animation: pulse 0.4s ease-out;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+.quote-section {
+    position: relative;
+    background-image: url('../assets/images/teachcode.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+}
+
+.quote-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px;
+}
+
+.quote-content {
+    position: relative;
+    color: white;
+    padding: 40px;
+    max-width: 600px;
+    text-align: right;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    opacity: 1;
+    transform: translateX(0);
+    animation: fadeInRight 1s ease forwards;
+}
+
+.quote-text {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0 0 15px 0;
+    line-height: 1.3;
+}
+
+.quote-author {
+    font-size: 18px;
+    font-style: italic;
+    margin: 10px 0 20px 0;
+    opacity: 0.9;
+}
+
+.quote-blurb {
+    font-size: 14px;
+    line-height: 1.6;
+    opacity: 0.8;
+}
+
+/* Animation for flying in and fading from the right */
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.header-small-text, .header-large-text {
+    color: #ffffff;
+    opacity: 1; /* Changed from 0 to 1 to ensure visibility */
+    transition: opacity 1s ease-in-out; /* Optional: animate visibility */
+}
+
+.steps-section {
+    padding: 60px 20px;
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+.steps-heading {
+    font-size: 2em;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.steps-container {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    color: #333;
+}
+
+.step-item {
+    display: flex;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.step-number {
+    font-size: 2.5em;
+    font-weight: bold;
+    background-color: #333;
+    color: white;
+    width: 100px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.step-description {
+    text-align: left;
+}
+
+.step-title {
+    font-size: 1.4em;
+    margin: 0;
+    color: #333;
+}
+
+.step-description p {
+    margin: 5px 0 0;
+    color: #555;
+}
+
+.step-connector {
+    width: 4px;
+    height: 40px;
+    background-color: #ddd;
+    margin: 0 auto;
+}
+
+.find-out-more {
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 1.1em;
+    color: #333;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.find-out-more:hover {
+    color: #ffcc80;
+}
+
+.find-out-more .arrow {
+    display: inline-block;
+    margin-left: 8px;
+    transition: transform 0.3s ease;
+    font-size: 1.2em;
+}
+
+.find-out-more:hover .arrow {
+    transform: translateX(5px);
+}            
+
+.centered-logo {
+    max-width: px; /* Adjust size as needed */
+    height: auto;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin: 15px 0;
+}
+
+.mission-statement {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 3rem; /* Extra-large font size */
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.mission-statement .word {
+    opacity: 0; /* Hidden initially */
+    animation: fadeInWord 1s ease forwards;
+    font-family: 'Rethink Sans' monospace;
+}
+
+.mission-statement .highlight-blue {
+    color: #62697091; /* Vibrant blue for "science" */
+}
+
+.mission-statement .highlight-yellow {
+    color: #5c5b59; /* Bright yellow for "all." */
+}
+
+@keyframes fadeInWord {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Subtle upward animation */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Container Styling */
+.content-section {
+    padding: 4rem 2rem;
+}
+
+.content-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    color: #333;
+}
+
+/* Logo Banner Styling */
+.logo-banner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem; /* Space between logos */
+}
+
+.logo-item {
+    flex: 1 1 150px; /* Makes logos responsive */
+    max-width: 150px; /* Ensures consistent logo size */
+    text-align: center;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.logo-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Ensures logos scale nicely */
+    border-radius: 8px; /* Optional: Rounded corners */
+}
+
+/* Animation on Scroll */
+[data-aos="fade-up"] {
+    transform: translateY(20px); /* Starts slightly below */
+}
+
+[data-aos="fade-up"].aos-animate {
+    opacity: 1; /* Fades in */
+    transform: translateY(0); /* Moves to its final position */
+}
+
+#map-container {
+    position: relative;
+    width: 100%;
+    height: 500px;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+}
+
+.map-key {
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.map-key .key-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.map-key .key-icon {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.key-hq {
+    background-color: blue;
+}
+
+.key-branch {
+    background-color: red;
+}
+
+.subheading {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+.content-section img {
+    max-width: 100%;
+    height: auto;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+.content-section img:hover {
+    transform: scale(1.05);
+}
+/* Carousel Container */
+.lesson-carousel {
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 0;
+    position: relative;
+}
+
+.lesson {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    background: linear-gradient(135deg, rgba(53, 58, 51, 0.1), rgba(107, 114, 99, 0.2));
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease;
+    cursor: pointer;
+    margin: 15px;
+    max-width: 350px;
+    text-align: center;
+    z-index: 0;
+    opacity: 0.95;
+}
+
+.lesson:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 50px rgba(107, 114, 99, 0.15);
+    opacity: 1;
+}
+
+.lesson:nth-child(even) {
+    background: linear-gradient(135deg, rgba(107, 114, 99, 0.1), rgba(138, 146, 128, 0.2));
+}
+
+.icon-container {
+    font-size: 48px;
+    color: #6b7263;
+    margin-bottom: 20px;
+    transition: color 0.3s ease;
+}
+
+.lesson:hover .icon-container {
+    color: #a8b29d;
+}
+
+.lesson-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #353a33;
+    margin-top: 15px;
+    transition: color 0.3s ease;
+}
+
+.lesson:hover .lesson-title {
+    color: #a8b29d;
+}
+
+.slick-prev, .slick-next {
+    font-size: 30px;
+    color: #6b7263;
+    z-index: 1;
+    background: none;
+    border: none;
+    transition: color 0.3s ease;
+    opacity: 0.7;
+}
+
+.slick-prev:hover, .slick-next:hover {
+    color: #a8b29d;
+    opacity: 1;
+}
+
+.description-section h2 {
+    font-size: 36px;
+    font-weight: 600;
+    color: #353a33;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.description-section p {
+    font-size: 18px;
+    color: #6b7263;
+    line-height: 1.5;
+    text-align: center;
+    margin-top: 10px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h3 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #353a33;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.slick-dots {
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.slick-dots li button {
+    background-color: #6b7263;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    padding: 0;
+    opacity: 0.7;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.slick-dots li button:hover,
+.slick-dots li.slick-active button {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* Dots for different states */
+.slick-dots li.slick-active button {
+    background-color: #a8b29d; /* Brand color for active dot */
+}
+form[role="search"] {
+    flex-grow: 1;
+    max-width: 300px;
+}
+
+.partners-section .swiper-slide {
+    background-color: #fff !important;
+    padding: 1rem;
+    border-radius: 0.5rem;
+  }
+  /* Center all rows of cards, even when there's fewer than a full row */
+.row.g-4 {
+    justify-content: center;
+  }
+  
+  /* Give every card a fixed max‑width and auto side‑margins */
+  .card {
+    max-width: 300px;
+    margin: 0 0.75rem; /* small gutter left/right */
+  }
+  
+  /* Override the inline sizes and make all profile images larger */
+  .card img.rounded-circle {
+    width: 140px !important;
+    height: 140px !important;
+    object-fit: cover; /* keep the circle crop */
+    margin-bottom: 1rem;
+  }
+  
+  /* --- Partner Section Adjustments --- */
+
+/* Center every partner‑row (even if it’s not “full”) */
+#partners .row.g-4 {
+    justify-content: center;
+  }
+  
+  /* Give each partner “card” column a max‑width and side margins */
+  #partners .col-6.col-md-3 {
+    max-width: 300px;
+    margin: 0 0.75rem;
+  }
+  
+  /* Enlarge the partner‑member circles (overrides inline 80×80) */
+  #partners img.rounded-circle {
+    width: 140px !important;
+    height: 140px !important;
+    object-fit: cover;
+    margin-bottom: 1rem;
+  }
+
+  /* Mobile-First Responsive Design */
+@media (max-width: 768px) {
+    /* Header and Hero Section */
+    .header-section {
+        height: 50vh;
+        background-attachment: scroll; /* Fixed backgrounds don't work well on mobile */
+    }
+    
+    .header-large-text {
+        font-size: 28px;
+    }
+    
+    .header-large-text-nobold {
+        font-size: 28px;
+    }
+    
+    .header-small-text {
+        font-size: 14px;
+    }
+    
+    /* Navigation */
+    .navbar-nav {
+        text-align: center;
+    }
+    
+    .navbar-nav .nav-link {
+        padding: 10px 0;
+        font-size: 16px;
+    }
+    
+    /* Content sections */
+    .content-section {
+        padding: 30px 15px;
+    }
+    
+    .content-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    
+    /* Blurbs */
+    .blurb {
+        margin: 0 10px 30px 10px;
+    }
+    
+    .blurb-icon {
+        font-size: 32px;
+    }
+    
+    .blurb-title {
+        font-size: 20px;
+    }
+    
+    .blurb-text {
+        font-size: 14px;
+    }
+    
+    /* Mission statement */
+    .mission-statement {
+        font-size: 2rem;
+        line-height: 1.3;
+    }
+    
+    /* Counter */
+    .counter {
+        font-size: 50px;
+    }
+    
+    .digit {
+        width: 40px;
+        height: 70px;
+    }
+    
+    /* Quote section */
+    .quote-section {
+        height: auto;
+        min-height: 50vh;
+        background-attachment: scroll;
+        padding: 40px 0;
+        justify-content: center;
+    }
+    
+    .quote-overlay {
+        position: relative;
+        background: rgba(0, 0, 0, 0.7);
+        padding: 20px;
+        margin: 0;
+        justify-content: center;
+    }
+    
+    .quote-content {
+        padding: 30px 20px;
+        text-align: center;
+        max-width: 100%;
+        margin: 0 auto;
+        position: static;
+        transform: none;
+        animation: none;
+        opacity: 1;
+        background: rgba(0, 0, 0, 0.4);
+        border-radius: 15px;
+    }
+    
+    .quote-text {
+        font-size: 20px;
+        line-height: 1.4;
+        margin-bottom: 15px;
+    }
+    
+    .quote-author {
+        font-size: 16px;
+        margin-bottom: 15px;
+    }
+    
+    .quote-blurb {
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    
+    /* Steps section */
+    .steps-container {
+        max-width: 100%;
+        padding: 0 15px;
+    }
+    
+    .step-item {
+        flex-direction: column;
+        text-align: center;
+        margin: 20px 0;
+    }
+    
+    .step-number {
+        font-size: 2em;
+        width: 70px;
+        height: 70px;
+        margin: 0 auto 15px auto;
+    }
+    
+    .step-description {
+        text-align: center;
+    }
+    
+    .step-title {
+        font-size: 1.2em;
+    }
+    
+    /* Lessons showcase */
+    .lessons-showcase {
+        padding: 2rem 15px 1rem 15px;
+    }
+    
+    .swiper {
+        height: 250px;
+    }
+    
+    .lesson-image {
+        width: 100%;
+        height: 120px;
+        margin-top: 15px;
+    }
+    
+    .lessons-link {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+    
+    /* Map container */
+    #map-container {
+        height: 300px;
+    }
+    
+    .map-key {
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 100%;
+        margin-top: 15px;
+    }
+    
+    /* Logo banner */
+    .logo-banner {
+        gap: 1rem;
+    }
+    
+    .logo-item {
+        flex: 1 1 120px;
+        max-width: 120px;
+    }
+    
+    /* Form elements */
+    .form-container {
+        margin: 20px 15px;
+        padding: 20px;
+    }
+    
+    .form-container h2 {
+        font-size: 2rem;
+    }
+    
+    .contact-form {
+        padding: 20px;
+    }
+    
+    /* Footer */
+    footer .row {
+        text-align: center;
+    }
+    
+    footer .col-md-4 {
+        margin-bottom: 20px;
+    }
+    
+    footer .d-flex {
+        justify-content: center;
+    }
+    
+    /* Partner section adjustments */
+    .partners-section .swiper-slide {
+        padding: 0.5rem;
+    }
+    
+    /* Team page cards */
+    .card {
+        margin: 0 auto 20px auto;
+    }
+    
+    .card img.rounded-circle {
+        width: 100px !important;
+        height: 100px !important;
+    }
+    
+    #partners img.rounded-circle {
+        width: 100px !important;
+        height: 100px !important;
+    }
+    
+    /* Carousel lessons */
+    .lesson-carousel {
+        padding: 20px 0;
+    }
+    
+    .lesson {
+        margin: 10px;
+        padding: 20px;
+        max-width: 300px;
+    }
+    
+    .lesson-title {
+        font-size: 1.3rem;
+    }
+    
+    .icon-container {
+        font-size: 40px;
+    }
+    
+    /* Benefit cards */
+    .why-join-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin-top: 20px;
+    }
+    
+    .benefit-card {
+        padding: 15px;
+    }
+    
+    .benefit-icon {
+        font-size: 32px;
+    }
+    
+    /* Contact cards */
+    .contact-card {
+        margin-bottom: 20px;
+    }
+    
+    .contact-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    /* Toggle switch */
+    .toggle-container {
+        gap: 5px;
+    }
+    
+    .switch {
+        width: 40px;
+        height: 20px;
+    }
+    
+    .slider:before {
+        height: 14px;
+        width: 14px;
+        left: 3px;
+        bottom: 3px;
+    }
+    
+    .sun-icon, .moon-icon {
+        font-size: 14px;
+        top: 3px;
+    }
+    
+    /* Accordion items */
+    .accordion-button {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+    
+    .accordion-body {
+        font-size: 14px;
+        padding: 15px;
+    }
+}
+
+/* Small mobile devices */
+@media (max-width: 480px) {
+    .header-large-text {
+        font-size: 24px;
+    }
+    
+    .header-large-text-nobold {
+        font-size: 24px;
+    }
+    
+    .mission-statement {
+        font-size: 1.5rem;
+    }
+    
+    .counter {
+        font-size: 40px;
+    }
+    
+    .digit {
+        width: 30px;
+        height: 60px;
+    }
+    
+    .quote-text {
+        font-size: 18px;
+    }
+    
+    .quote-author {
+        font-size: 14px;
+    }
+    
+    .quote-blurb {
+        font-size: 13px;
+    }
+    
+    .quote-content {
+        padding: 20px 15px;
+    }
+    
+    /* ...existing code... */
+}
+
+/* Tablet landscape orientation */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .header-large-text {
+        font-size: 36px;
+    }
+    
+    .header-large-text-nobold {
+        font-size: 36px;
+    }
+    
+    .mission-statement {
+        font-size: 2.5rem;
+    }
+    
+    .lesson {
+        max-width: 320px;
+    }
+    
+    .swiper {
+        height: 280px;
+    }
+    
+    .quote-text {
+        font-size: 24px;
+    }
+    
+    .quote-author {
+        font-size: 16px;
+    }
+    
+    .quote-content {
+        padding: 30px;
+        max-width: 500px;
+    }
+}
+
+/* Touch device improvements */
+@media (hover: none) and (pointer: coarse) {
+    .blurb:hover {
+        transform: none;
+    }
+    
+    .lesson:hover {
+        transform: none;
+    }
+    
+    .contact-card:hover {
+        transform: none;
+    }
+    
+    .benefit-card:hover {
+        transform: none;
+    }
+    
+    .content-section img:hover {
+        transform: none;
+    }
+    
+    /* Make buttons and links more touch-friendly */
+    .btn, .nav-link, .lessons-link {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .accordion-button {
+        min-height: 44px;
+    }
+}
+
+/* Improve slick carousel for mobile */
+.slick-prev, .slick-next {
+    z-index: 2;
+}
+
+.slick-prev {
+    left: 10px;
+}
+
+.slick-next {
+    right: 10px;
+}
+
+@media (max-width: 768px) {
+    .slick-prev, .slick-next {
+        font-size: 24px;
+        width: 40px;
+        height: 40px;
+    }
+    
+    .slick-dots {
+        bottom: -30px;
+    }
+    
+    .slick-dots li button {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+/* Swiper mobile improvements */
+@media (max-width: 768px) {
+    .swiper-button-prev, .swiper-button-next {
+        font-size: 16px;
+        width: 35px;
+        height: 35px;
+    }
+    
+    .swiper-button-prev {
+        left: 5px;
+    }
+    
+    .swiper-button-next {
+        right: 5px;
+    }
+    
+    .swiper-button-next {
+        right: 5px;
+    }
+}
+        height: 35px;
+    }
+    
+    .swiper-button-prev {
+        left: 5px;
+    }
+    
+    .swiper-button-next {
+        right: 5px;
+    }
+    
+    .swiper-button-next {
+        right: 5px;
+    }
+}

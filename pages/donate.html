@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - Coders Over Borders</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'mono': ['Space Mono', 'monospace'],
+                    },
+                    colors: {
+                        'brand': '#353a33',
+                        'brand-light': '#6b7263',
+                        'brand-lighter': '#8a9280',
+                        'brand-accent': '#a8b29d',
+                        'dark': {
+                            100: '#0f0f0f',
+                            200: '#1a1a1a',
+                            300: '#2a2a2a',
+                            400: '#3a3a3a',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-morphism {
+            background: rgba(26, 26, 26, 0.7);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #353A33, #6b7263, #8a9280, #a8b29d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hover-glow:hover {
+            box-shadow: 0 0 25px rgba(107, 114, 99, 0.4);
+        }
+    </style>
+</head>
+<body class="font-mono antialiased bg-dark-100 text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glass-morphism border-b border-gray-800/50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center space-x-4">
+                    <img src="../assets/logos/coblongfixedcolor.png" alt="Logo" class="h-12 w-auto hidden sm:block">
+                    <img src="../assets/logos/coblogotransparent.png" alt="Logo" class="h-12 w-auto sm:hidden">
+                </div>
+                
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="../index.html" class="text-gray-300 hover:text-brand-accent transition-all duration-300 font-medium">Home</a>
+                    <a href="about.html" class="text-gray-300 hover:text-brand-accent transition-all duration-300 font-medium">About</a>
+                    <a href="team.html" class="text-gray-300 hover:text-brand-accent transition-all duration-300 font-medium">Team</a>
+                    <a href="lessons.html" class="text-gray-300 hover:text-brand-accent transition-all duration-300 font-medium">Courses</a>
+                    <a href="contact.html" class="text-gray-300 hover:text-brand-accent transition-all duration-300 font-medium">Contact</a>
+                    
+                    <!-- More Dropdown -->
+                    <div class="relative group">
+                        <button class="text-gray-300 hover:text-brand-accent transition-all duration-300 hover:scale-105 font-medium flex items-center space-x-1">
+                            <span>More</span>
+                            <i class="fas fa-chevron-down text-sm transition-transform duration-300 group-hover:rotate-180"></i>
+                        </button>
+                        <div class="absolute top-full left-0 mt-2 w-48 glass-morphism rounded-2xl border border-gray-700/50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                            <div class="p-2">
+                                <a href="become_staff.html" class="block px-4 py-3 text-gray-300 hover:text-brand-accent hover:bg-brand-accent/10 rounded-xl transition-all duration-300">
+                                    <i class="fas fa-user-plus mr-2"></i>Become Staff
+                                </a>
+                                <a href="blog.html" class="block px-4 py-3 text-gray-300 hover:text-brand-accent hover:bg-brand-accent/10 rounded-xl transition-all duration-300">
+                                    <i class="fas fa-blog mr-2"></i>Blog
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="donate.html" class="text-brand-accent font-semibold relative">
+                        Donate
+                        <span class="absolute -bottom-2 left-0 w-full h-0.5 bg-brand-accent"></span>
+                    </a>
+                </div>
+                
+                <button class="lg:hidden text-gray-300 hover:text-brand-accent" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="lg:hidden hidden" id="mobile-menu">
+            <div class="glass-morphism m-4 rounded-2xl p-6 space-y-4">
+                <a href="../index.html" class="block text-gray-300 hover:text-brand-accent transition-colors">Home</a>
+                <a href="about.html" class="block text-gray-300 hover:text-brand-accent transition-colors">About</a>
+                <a href="team.html" class="block text-gray-300 hover:text-brand-accent transition-colors">Team</a>
+                <a href="lessons.html" class="block text-gray-300 hover:text-brand-accent transition-colors">Courses</a>
+                <a href="contact.html" class="block text-gray-300 hover:text-brand-accent transition-colors">Contact</a>
+                <div class="border-t border-gray-700 pt-4">
+                    <a href="become_staff.html" class="block text-gray-300 hover:text-brand-accent transition-colors">Become Staff</a>
+                    <a href="blog.html" class="block text-gray-300 hover:text-brand-accent transition-colors">Blog</a>
+                </div>
+                <a href="donate.html" class="block text-brand-accent font-semibold text-lg">Donate</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[70vh] flex items-center justify-center overflow-hidden bg-gradient-to-br from-dark-100 via-dark-200 to-dark-300 pt-20">
+        <div class="absolute inset-0">
+            <div class="absolute top-20 left-10 w-32 h-32 bg-brand-accent/10 rounded-full blur-xl"></div>
+            <div class="absolute bottom-20 right-10 w-48 h-48 bg-brand-light/10 rounded-full blur-xl"></div>
+        </div>
+        
+        <div class="relative z-10 max-w-5xl mx-auto text-center px-6">
+            <h1 class="text-6xl md:text-7xl font-bold text-white mb-8" data-aos="fade-up">
+                <span class="gradient-text">Donate</span> to Support Us
+            </h1>
+            <p class="text-2xl md:text-3xl text-gray-300 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                Help us expand our global reach
+            </p>
+        </div>
+    </section>
+
+    <!-- Donation Section -->
+    <section class="py-32 bg-dark-200">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="glass-morphism rounded-3xl p-16 text-center mb-16" data-aos="fade-up">
+                <h2 class="text-5xl font-bold text-white mb-8">Support Our Mission</h2>
+                <p class="text-xl text-gray-400 mb-12 max-w-3xl mx-auto leading-relaxed">
+                    Your gift fuels free, hands-on coding lessons for kids around the globe.
+                </p>
+                <a href="https://hcb.hackclub.com/donations/start/coders-over-borders" target="_blank" class="bg-gradient-to-r from-brand to-brand-light text-white px-10 py-5 rounded-full font-bold text-lg hover:scale-105 hover-glow transition-all duration-300 inline-flex items-center">
+                    <i class="fas fa-external-link-alt mr-3"></i>
+                    Donate through Hack Club
+                </a>
+            </div>
+
+            <!-- Counter -->
+            <div class="glass-morphism rounded-3xl p-12 text-center mb-16" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="text-3xl font-bold text-white mb-6">Total Raised So Far</h3>
+                <div class="text-6xl font-bold gradient-text mb-6">$<span id="donation-count">0</span></div>
+                <p class="text-gray-400 text-lg">Every dollar makes a difference in a student's life</p>
+            </div>
+
+            <!-- Reasons to Give -->
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-morphism rounded-3xl p-10 hover:scale-105 transition-all duration-500 hover-glow text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 mx-auto mb-8 bg-gradient-to-br from-brand to-brand-light rounded-2xl flex items-center justify-center">
+                        <i class="fas fa-chalkboard-teacher text-3xl text-white"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-white mb-6">Empower Students</h4>
+                    <p class="text-gray-400 leading-relaxed">Help young learners gain the 21st-century skill of coding—and build their future.</p>
+                </div>
+
+                <div class="glass-morphism rounded-3xl p-10 hover:scale-105 transition-all duration-500 hover-glow text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 mx-auto mb-8 bg-gradient-to-br from-brand-light to-gray-600 rounded-2xl flex items-center justify-center">
+                        <i class="fas fa-globe text-3xl text-white"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-white mb-6">Global Reach</h4>
+                    <p class="text-gray-400 leading-relaxed">Enable free, high-quality lessons in underserved communities worldwide.</p>
+                </div>
+
+                <div class="glass-morphism rounded-3xl p-10 hover:scale-105 transition-all duration-500 hover-glow text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="w-20 h-20 mx-auto mb-8 bg-gradient-to-br from-gray-600 to-slate-500 rounded-2xl flex items-center justify-center">
+                        <i class="fas fa-laptop-code text-3xl text-white"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-white mb-6">Innovate</h4>
+                    <p class="text-gray-400 leading-relaxed">Fund new interactive courses, tools, and events that spark creativity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-100 border-t border-gray-800/50 py-20">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-4 gap-12">
+                <div class="lg:col-span-2">
+                    <div class="flex items-center space-x-4 mb-8">
+                        <img src="../assets/logos/coblogotransparent.png" alt="Logo" class="h-16 w-auto">
+                        <span class="text-3xl font-bold gradient-text">Coders Over Borders</span>
+                    </div>
+                    <p class="text-gray-400 leading-relaxed mb-8 text-lg">
+                        Empowering communities worldwide through innovative computer science education and breaking down digital barriers.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="w-12 h-12 glass-morphism rounded-full flex items-center justify-center hover:bg-brand-accent hover:text-black transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 glass-morphism rounded-full flex items-center justify-center hover:bg-brand-accent hover:text-black transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 glass-morphism rounded-full flex items-center justify-center hover:bg-brand-accent hover:text-black transition-all duration-300 hover:scale-110">
+                            <i class="fab fa-youtube text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-6">Quick Links</h3>
+                    <ul class="space-y-4">
+                        <li><a href="about.html" class="text-gray-400 hover:text-brand-accent transition-colors text-lg">About Us</a></li>
+                        <li><a href="lessons.html" class="text-gray-400 hover:text-brand-accent transition-colors text-lg">Courses</a></li>
+                        <li><a href="team.html" class="text-gray-400 hover:text-brand-accent transition-colors text-lg">Our Team</a></li>
+                        <li><a href="blog.html" class="text-gray-400 hover:text-brand-accent transition-colors text-lg">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-6">Get Involved</h3>
+                    <ul class="space-y-4">
+                        <li><a href="contact.html" class="text-gray-400 hover:text-brand-accent transition-colors text-lg">Contact Us</a></li>
+                        <li><a href="become_staff.html" class="text-gray-400 hover:text-brand-accent transition-colors text-lg">Join Our Team</a></li>
+                        <li><a href="donate.html" class="text-gray-400 hover:text-brand-accent transition-colors text-lg">Donate</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-16 pt-8 text-center">
+                <p class="text-gray-500 text-lg">&copy; 2025 Coders Over Borders. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+
+        // Donation counter animation
+        document.addEventListener('DOMContentLoaded', () => {
+            const countEl = document.getElementById('donation-count');
+            let total = parseFloat(localStorage.getItem('donationTotal')) || 0;
+            
+            // Animate counter
+            function animateCount() {
+                let current = 0;
+                const increment = total / 60;
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= total) {
+                        current = total;
+                        clearInterval(timer);
+                    }
+                    countEl.textContent = current.toFixed(2);
+                }, 30);
+            }
+            
+            animateCount();
+        });
+
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
