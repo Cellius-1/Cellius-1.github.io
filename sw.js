@@ -1,5 +1,5 @@
 // Generated from _src/sw.js by _src/build.py. Pages: stale-while-revalidate. Everything else: cache-first.
-const CACHE = 'cob-e72a0769c3';
+const CACHE = 'cob-a9b41a5c71';
 const PAGES = ["/pages/about.html", "/pages/ai_agreement.html", "/pages/become_staff.html", "/pages/blog.html", "/pages/contact.html", "/pages/donate.html", "/pages/hackathon.html", "/", "/pages/lessons.html", "/pages/team.html"];
 
 self.addEventListener('install', e => {
