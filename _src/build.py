@@ -38,7 +38,7 @@ def foot(sub):
     return (f'<footer><div class="wrap"><div class="cols">'
             f'<div><p><a class="logo" href="{href("index", sub)}"><b>&lt;COB&gt;</b>Coders Over Borders</a></p>'
             f'<p>Empowering communities worldwide through innovative computer science education and breaking down digital barriers.</p></div>'
-            f'<div><h3>Quick Links</h3><ul>{links([("about", "About Us"), ("lessons", "Courses"), ("team", "Our Team"), ("blog", "Blog")])}</ul></div>'
+            f'<div><h3>Quick Links</h3><ul>{links([("about", "About Us"), ("lessons", "Courses"), ("team", "Our Team"), ("blog", "Blog"), ("ai_agreement", "AI Agreement")])}</ul></div>'
             f'<div><h3>Get Involved</h3><ul>{links([("contact", "Contact Us"), ("become_staff", "Join Our Team"), ("donate", "Donate")])}</ul></div>'
             f'</div><p class="copy">&copy; 2025 Coders Over Borders. All rights reserved.</p></div></footer>')
 
